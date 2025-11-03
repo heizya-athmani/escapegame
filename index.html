@@ -12,7 +12,7 @@
 
   <header class="site-header" role="banner">
     <div class="container">
-      <a class="site-logo" href="/">HKNIF</a>
+      <a class="site-logo" href="/">REDROOM</a>
       <nav class="site-nav" aria-label="Navigation principale">
         <button class="nav-sound" id="soundToggle" aria-pressed="false" aria-label="Activer le son">🔊</button> 
       </nav>
@@ -25,10 +25,16 @@
   <div class="overlay" aria-hidden="true"></div>
     <div class="container hero-inner">
     <h1 id="hero-title" class="glow">
-      <span class="tw" data-text="BIENVENUE DANS HKNIF"></span>
+      <div class="input-zone">
+      <span class="tw" data-text="BIENVENUE DANS REDROOM"></span>
     </h1>
+    
     <p class="tag">Osez entrer… si vous l’osez.</p>
-    <button class="btn enter" id="enterBtn">Entrer</button>
+    <div class="enter-zone">
+  <input type="text" id="playerName" placeholder="Entrez votre nom..." maxlength="15" required>
+  <button class="btn enter" id="enterBtn">Entrer</button>
+</div>
+
   </div>
 </section>
 
@@ -44,6 +50,6 @@
     <source src="chercher un son" type="audio/mpeg">
   </audio>
 
-  <script src="assets/js/script.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

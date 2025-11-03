@@ -78,12 +78,21 @@ body {
   filter: brightness(.45) saturate(.9);
 }
 
-}
+
 .hero .overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(80% 60% at 50% 60%, rgba(0,0,0,.1) 0%, rgba(0,0,0,.6) 60%, rgba(0,0,0,.9) 100%);
 }
+
+.enter-zone {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 0.8rem;           
+}
+
 .grain {
   pointer-events: none;
   position: absolute;
