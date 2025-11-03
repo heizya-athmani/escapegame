@@ -1,0 +1,56 @@
+:root {
+  --bg: #0b0b0d;
+  --fg: #e7e2d9;
+  --accent: #c02;
+  --muted: #9b958c;
+}
+
+/* Header */
+.container { 
+    width: min(1100px, 92%); margin-inline: auto; 
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 20;
+  background: linear-gradient(180deg, rgba(0,0,0,.7), transparent);
+  backdrop-filter: blur(2px);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+.site-logo {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Creepster', cursive;
+}
+
+.nav-sound {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.06);
+  color: var(--fg);
+  padding: .5rem .75rem;
+  border-radius: .75rem;
+  cursor: pointer;
+}
+
+.nav-sound[aria-pressed="true"] {
+  background: rgba(192,0,34,.2);
+  border-color: #c002;
+}
