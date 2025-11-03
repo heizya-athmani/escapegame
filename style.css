@@ -74,7 +74,7 @@ body {
 .hero .bg {
   position: absolute;
   inset: 0;
-  background: url('couloir.webp') center/cover no-repeat;
+  background: url('horror.webp') center/cover no-repeat;
   filter: brightness(.45) saturate(.9);
 }
 
