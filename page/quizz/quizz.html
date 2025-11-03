@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HKNIF —quizz Horror </title>
+  <meta name="description" content="page jeux horreur ">
+  <link rel="stylesheet" href="/assets/styles/quizz.css">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="site-logo" href="/">HKNIF</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <button class="nav-sound" id="soundToggle" aria-pressed="false" aria-label="Activer le son">🔊</button> 
+      </nav>
+    </div>
+  </header>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="annee"></span> HKNIF</p>
+    </div>
+  </footer>
+
+  <audio id="ambience" preload="auto" loop>
+    <source src="assets/audio/ambience.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
