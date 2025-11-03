@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HKNIF — Escape Horror</title>
+  <meta name="description" content="Site vitrine escape game horreur">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="site-logo" href="/">HKNIF</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <button class="nav-sound" id="soundToggle" aria-pressed="false" aria-label="Activer le son">🔊</button> 
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+  <img src="horror.webp" alt="image horror" class="hero-img">
+  <div class="container hero-inner">
+    <h1 id="hero-title" class="glow">
+      <span class="tw" data-text="BIENVENUE DANS HKNIF"></span>
+    </h1>
+    <p class="tag">Osez entrer… si vous l’osez.</p>
+    <button class="btn enter" id="enterBtn">Entrer</button>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="annee"></span> HKNIF</p>
+    </div>
+  </footer>
+
+  <audio id="ambience" preload="auto" loop>
+    <source src="assets/audio/ambience.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>
