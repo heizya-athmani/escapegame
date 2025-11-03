@@ -74,16 +74,31 @@ body {
 .hero .bg {
   position: absolute;
   inset: 0;
-  background: url('couloir.webp') center/cover no-repeat;
+  background: url('horror.webp') center/cover no-repeat;
   filter: brightness(.45) saturate(.9);
 }
 
+<<<<<<< HEAD:style.css
+
+=======
+>>>>>>> f9d66a0e82632414a6ae421c9c6e9dc0acca81ba:assets/styles/style.css
 .hero .overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(80% 60% at 50% 60%, rgba(0,0,0,.1) 0%, rgba(0,0,0,.6) 60%, rgba(0,0,0,.9) 100%);
 }
 
+<<<<<<< HEAD:style.css
+.enter-zone {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 0.8rem;           
+}
+
+=======
+>>>>>>> f9d66a0e82632414a6ae421c9c6e9dc0acca81ba:assets/styles/style.css
 .grain {
   pointer-events: none;
   position: absolute;
