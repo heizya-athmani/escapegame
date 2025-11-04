@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(typeNext, delay);
     } else {
       tw.classList.add('flicker');
-      const title = document.getElementById('hero-title');
+      const title = document.getElementById('first-title');
       title?.classList.add('shake');
       setTimeout(() => title?.classList.remove('shake'), 900);
     }
