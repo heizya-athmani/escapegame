@@ -8,22 +8,66 @@
   <link rel="stylesheet" href="/assets/styles/memory.css">
   <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header class="site-header" role="banner">
-    <div class="container">
+    <div class="container1">
       <a class="site-logo" href="/">HKNIF</a>
       <nav class="site-nav" aria-label="Navigation principale">
         <button class="nav-sound" id="soundToggle" aria-pressed="false" aria-label="Activer le son">🔊</button> 
       </nav>
     </div>
   </header>
+
   <main>
-    
+    <div class="start-overlay" id="startOverlay">
+        <div class="start-content">
+            <h2>Memory</h2>
+            <p>Je veux jouer à un jeu...</p>
+            <p>vous avez 1 minutes et 20 tentatives</p>
+            <p>pour compléter toutes les paires...</p>
+            <p>et vous survivrez</p>
+            <button class="button" id="startBtn">Commencer</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Memory</h1>
+        
+        <div class="game-info">
+            <div class="info-item">
+                <span class="info-label">Temps</span>
+                <span class="info-value" id="timer">1:00</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Tentatives</span>
+                <span class="info-value" id="moves">0/20</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Paires</span>
+                <span class="info-value" id="matches">0/8</span>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard"></div>
+    </div>
+
+    <div class="message-overlay" id="messageOverlay">
+        <div class="message-content" id="messageContent">
+            <h2 id="messageTitle"></h2>
+            <p id="messageText"></p>
+            <button class="button" onclick="restartGame()">Recommencer ?</button>
+        </div>
+    </div>    
   </main>
+
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <p>&copy; <span id="annee"></span> HKNIF</p>
     </div>
-  </footer>  
+  </footer>
+  
+  <script src="memory.js"></script>  
+
 </body>
 </html>
