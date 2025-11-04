@@ -101,7 +101,7 @@ function startTimer() {
         const timerEl = document.getElementById('timer');
         timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
-        if (timeLeft <= 30) {
+        if (timeLeft <= 15) {
             timerEl.classList.add('warning');
         }
 
@@ -165,5 +165,4 @@ function restartGame() {
 
 document.getElementById('startBtn').addEventListener('click', startGame);
 
-// Initialize game
 createBoard();

@@ -12,9 +12,6 @@
 }
 
 /* Header */
-.container1 { 
-    width: min(1100px, 92%); margin-inline: auto; 
-}
 
 .site-header {
   position: fixed;
@@ -24,11 +21,12 @@
   backdrop-filter: blur(2px);
 }
 
-.site-header .container {
+.site-header .container-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 14px 0;
+  width: min(1100px, 92%); 
+  margin-inline: auto; 
 }
 
 .site-logo {
@@ -88,8 +86,15 @@ body::before {
 }
 
 .container {
-  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1200px;
   width: 100%;
+  padding-right: 32rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  gap: 2rem;
   position: relative;
   z-index: 1;
 }
@@ -102,15 +107,16 @@ h1 {
   font-weight: 300;
   letter-spacing: 8px;
   text-transform: uppercase;
-  font-family: 'Georgia', serif;
+  font-family: 'Creepster', cursive;
 }
 
 .game-info {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 8rem;
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 1rem;
   background: rgba(20, 20, 20, 0.8);
   border: 1px solid #3a3a3a;
   border-radius: 4px;
@@ -147,18 +153,6 @@ h1 {
   animation: pulse 1s infinite;
 }
 
-@keyframes pulse {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.6;
-  }
-}
-
 .game-board {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -173,19 +167,6 @@ h1 {
 .game-board.active {
   opacity: 1;
   pointer-events: all;
-}
-
-@media (max-width: 768px) {
-  .game-board {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .game-board {
-    gap: 8px;
-  }
 }
 
 .card {
@@ -380,11 +361,47 @@ h1 {
 
 /* Footer */
 .site-footer {
-  position: relative;
-  z-index: 5;
+  color: #7f7b73;
 }
 
-.site-footer .container {
-  padding: 2rem 0;
-  color: #7f7b73;
+.container-footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  .game-info {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-board {
+    gap: 8px;
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
 }

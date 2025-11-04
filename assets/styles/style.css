@@ -37,7 +37,8 @@ body {
 .skip-link:focus {
   left: 1rem; top: 1rem;
   width: auto; height: auto;
-  background: #000; color: #fff;
+  background: #000; 
+  color: #fff;
   padding: .5rem .75rem;
 }
 
@@ -88,7 +89,6 @@ body {
 
 .img {
   height: 100vh;
-
   position: absolute;
   filter: brightness(.75);
 }
