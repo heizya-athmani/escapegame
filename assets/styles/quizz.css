@@ -34,6 +34,18 @@
 }
 
 /* starter screen */
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  perspective: 1000px;
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
 h1 {
   font-family: 'Creepster', cursive;
   text-align: center;
