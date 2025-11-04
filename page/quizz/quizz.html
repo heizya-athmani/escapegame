@@ -6,27 +6,66 @@
   <title>HKNIF —quizz Horror </title>
   <meta name="description" content="page jeux horreur ">
   <link rel="stylesheet" href="/assets/styles/quizz.css">
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <header class="site-header" role="banner">
     <div class="container">
       <a class="site-logo" href="/">HKNIF</a>
       <nav class="site-nav" aria-label="Navigation principale">
-        <button class="nav-sound" id="soundToggle" aria-pressed="false" aria-label="Activer le son">🔊</button> 
+        <button class="nav-sound" id="soundToggle" aria-pressed="false" aria-label="Activer le son">🔊</button>
       </nav>
     </div>
   </header>
+
+  <div class="container2">
+    <h1>👻 QUIZ D'HORREUR 👻</h1>
+    <p class="subtitle">Osez-vous affronter vos peurs ?</p>
+
+    <div id="start-screen" class="active">
+      <p>
+        dans le quiz d'horreur le plus terrifiant !<br><br>
+        Testez vos connaissances sur les films, livres et légendes d'horreur.<br><br>
+        10 questions vous attendent dans l'ombre...<br><br>
+        Êtes-vous prêt ?
+      </p>
+      <button class="start-btn" onclick="startQuiz()">COMMENCER LE QUIZ</button>
+    </div>
+
+    <div id="quiz-screen">
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="question-container">
+        <div class="question-number" id="question-number"></div>
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+      </div>
+      <button class="next-btn" id="next-btn" onclick="nextQuestion()">Question Suivante</button>
+    </div>
+
+    <div id="result-screen">
+      <div class="score" id="final-score"></div>
+      <div class="result-message" id="result-message"></div>
+      <button class="restart-btn" onclick="restartQuiz()">RECOMMENCER</button>
+      <a class="home-btn"  href="/index.html">home </a>
+    </div>
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <p>&copy; <span id="annee"></span> HKNIF</p>
     </div>
   </footer>
 
-  <audio id="ambience" preload="auto" loop>
-    <source src="assets/audio/ambience.mp3" type="audio/mpeg">
-  </audio>
-
-  <script src="/script.js" defer></script>
 </body>
+
+<audio id="ambience" preload="auto" loop>
+  <source src="assets/audio/ambience.mp3" type="audio/mpeg">
+</audio>
+
+<script src="/script.js" defer></script>
+<script src="quizz.js" defer ></script>
+</body>
+
 </html>

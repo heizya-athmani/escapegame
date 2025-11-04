@@ -1,37 +1,67 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HKNIF — Escape Horror</title>
+  <title>REDROOM — Escape Horror</title>
   <meta name="description" content="Site vitrine escape game horreur">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header" role="banner">
     <div class="container">
-      <a class="site-logo" href="/">HKNIF</a>
+      <a class="site-logo" href="/">REDROOM</a>
       <nav class="site-nav" aria-label="Navigation principale">
-        <button class="nav-sound" id="soundToggle" aria-pressed="false" aria-label="Activer le son">🔊</button> 
+        <button class="nav-sound" id="soundToggle" aria-pressed="false" aria-label="Activer le son">🔊</button>
       </nav>
     </div>
   </header>
 
-  <section class="hero" id="hero" aria-labelledby="hero-title">
-  <img src="horror.webp" alt="image horror" class="hero-img">
-  <div class="bg" aria-hidden="true"></div>
-  <div class="overlay" aria-hidden="true"></div>
-    <div class="container hero-inner">
+
+  <main id="contenu">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <img src="horror.jpg" alt="image horror" class="hero-img">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="overlay" aria-hidden="true"></div>
+      <div class="container hero-inner">
+
     <h1 id="hero-title" class="glow">
       <span class="tw" data-text="BIENVENUE DANS HKNIF"></span>
     </h1>
     <p class="tag">Osez entrer… si vous l’osez.</p>
-    <button class="btn enter" id="enterBtn">Entrer</button>
-  </div>
+
+    <div class="enter-zone">
+  <input type="text" id="playerName" placeholder="Entrez votre nom..." maxlength="15" required>
+  <button class="btn enter" id="enterBtn">Entrer</button>
+  <a href="page/quizz/quizz.html">quizz</a>
+         <a href="./page/memory/memory.html" class="game quizz" id="quizzbtn">Memory</a>
+</div>
+
+  
 </section>
 
+
+
+        <div class="container hero-inner">
+          <h1 id="hero-title" class="glow">
+            <div class="input-zone">
+              <span class="tw" data-text="BIENVENUE DANS REDROOM"></span>
+            </div>
+          </h1>
+
+          <p class="tag">Osez entrer… si vous l’osez.</p>
+
+          <div class="enter-zone">
+            <input type="text" id="playerName" placeholder="Entrez votre nom..." maxlength="15" required>
+            <button class="btn enter" id="enterBtn">Entrer</button>
+          </div>
+        </div>
+    </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -44,6 +74,8 @@
     <source src="chercher un son" type="audio/mpeg">
   </audio>
 
-  <script src="assets/js/script.js" defer></script>
+  <script src="/script.js" defer></script>
+
 </body>
+
 </html>
