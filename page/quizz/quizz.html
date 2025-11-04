@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,49 +22,35 @@
 
   <main>
     <div class="container2">
-      <h1>👻 QUIZ D'HORREUR 👻</h1>
-      <p class="subtitle">Osez-vous affronter vos peurs ?</p>
-
+      <div class="game-board">
+      <h1> test </h1>
+      <p class="subtitle">test test test /p>
       <div id="start-screen" class="active">
+        <div class="text-start"></div>
         <p>
-          dans le quiz d'horreur le plus terrifiant !<br><br>
-          Testez vos connaissances sur les films, livres et légendes d'horreur.<br><br>
-          10 questions vous attendent dans l'ombre...<br><br>
-          Êtes-vous prêt ?
+          What is Lorem Ipsum?
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.
         </p>
-        <button class="start-btn" onclick="startQuiz()">COMMENCER LE QUIZ</button>
-      </div>
-
-      <div id="quiz-screen">
-        <div class="progress">
-          <div class="progress-bar" id="progress-bar"></div>
+        <div class="marginbutton">
+          <button class="start-btn" onclick="startQuiz()">COMMENCER LE quizz 
+          </button>
         </div>
-        <div class="question-container">
-          <div class="question-number" id="question-number"></div>
-          <div class="question" id="question"></div>
-          <div class="options" id="options"></div>
-        </div>
-        <button class="next-btn" id="next-btn" onclick="nextQuestion()">Question Suivante</button>
       </div>
-
-      <div id="result-screen">
-        <div class="score" id="final-score"></div>
-        <div class="result-message" id="result-message"></div>
-        <button class="restart-btn" onclick="restartQuiz()">RECOMMENCER</button>
-        <a class="home-btn" href="/index.html">home </a>
-      </div>
+    </div>
+    </div>
   </main>
-
-  </div>
-
-  <script src="/script.js" defer></script>
-  <script src="quizz.js" defer></script>
-
+  
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <p>&copy; <span id="annee"></span> HKNIF</p>
     </div>
   </footer>
+
 </body>
 
 <audio id="ambience" preload="auto" loop>
@@ -73,6 +58,7 @@
 </audio>
 
 <script src="/script.js" defer></script>
+<script src="quizz.js" defer ></script>
 </body>
 
 </html>

@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HKNIF — Escape Horror</title>
+  <title>REDROOM — Escape Horror</title>
   <meta name="description" content="Site vitrine escape game horreur">
   <link rel="stylesheet" href="./assets/styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,29 +23,45 @@
   </header>
 
   <section class="hero" id="hero" aria-labelledby="hero-title">
-    <img src="horror.jpg" alt="image horror" class="hero-img">
-    <div class="bg" aria-hidden="true"></div>
-    <div class="overlay" aria-hidden="true"></div>
+  <img src="horror.jpg" alt="image horror" class="hero-img">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="overlay" aria-hidden="true"></div>
     <div class="container hero-inner">
 
-      <img src="./assets/images/horror.jpg" alt="image horror" class="hero-img">
-      <div class="container hero-inner">
+  <img src="./assets/images/horror.jpg" alt="image horror" class="hero-img">
+  <div class="container hero-inner">
 
-        <h1 id="hero-title" class="glow">
-          <div class="input-zone">
-            <span class="tw" data-text="BIENVENUE DANS REDROOM"></span>
-        </h1>
+    <h1 id="hero-title" class="glow">
+      <div class="input-zone">
+      <span class="tw" data-text="BIENVENUE DANS REDROOM"></span>
+    </h1>
+    
+    <p class="tag">Osez entrer… si vous l’osez.</p>
+    <div class="enter-zone">
+  <input type="text" id="playerName" placeholder="Entrez votre nom..." maxlength="15" required>
+  <button class="btn enter" id="enterBtn">Entrer</button>
+</div>
 
-        <p class="tag">Osez entrer… si vous l’osez.</p>
-        <div class="enter-zone">
-          <input type="text" id="playerName" placeholder="Entrez votre nom..." maxlength="15" required>
-          <button class="btn enter" id="enterBtn">Entrer</button>
-          <a href="page/quizz/quizz.html">quizz</a>
+  </div>
+</section>
+
+
+
+        <div class="container hero-inner">
+          <h1 id="hero-title" class="glow">
+            <div class="input-zone">
+              <span class="tw" data-text="BIENVENUE DANS REDROOM"></span>
+            </div>
+          </h1>
+
+          <p class="tag">Osez entrer… si vous l’osez.</p>
+
+          <div class="enter-zone">
+            <input type="text" id="playerName" placeholder="Entrez votre nom..." maxlength="15" required>
+            <button class="btn enter" id="enterBtn">Entrer</button>
+          </div>
         </div>
-
-      </div>
-  </section>
-
+    </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
