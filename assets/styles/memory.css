@@ -55,6 +55,14 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 2rem; 
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -102,7 +110,8 @@ h1 {
   margin-bottom: 30px;
   padding: 1rem;
   background: rgba(20, 20, 20, 0.8);
-  border: 1px solid #3a3a3a;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
   border-radius: 4px;
   flex-wrap: wrap;
   gap: 20px;
@@ -255,7 +264,8 @@ h1 {
 .message-content {
   background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
   padding: 50px 40px;
-  border: 1px solid #4a4a4a;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
   text-align: center;
   max-width: 90%;
   max-height: 90vh;
@@ -302,7 +312,8 @@ h1 {
 .start-content {
   background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
   padding: 50px 40px;
-  border: 1px solid #4a4a4a;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
   text-align: center;
   max-width: 500px;
   width: 90%;

@@ -5,6 +5,12 @@
   --muted: #9b958c;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: var(--bg);
   color: var(--fg);
