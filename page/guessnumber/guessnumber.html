@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Guess the Number</title>
+  <link rel="stylesheet" href="../../assets/styles/guessnumber.css">
+</head>
+<body>
+  <div class="guess-app">
+    <main class="panel" role="main">
+      <h1 class="title" aria-label="Guess the Number">
+        <span>Guess the Number</span>
+        <span class="ghost" aria-hidden="true">Guess the Number</span>
+      </h1>
+      <p class="subtitle">(Entre 1 et 100)</p>
+
+      <form class="form" id="guessForm" autocomplete="off" action="javascript:void(0)">
+        <label class="sr-only" for="guessInput">Votre essai</label>
+        <input id="guessInput" class="input" name="guess" type="number" min="1" max="100" placeholder="Votre nombre…" inputmode="numeric" />
+        <button class="btn" id="tryBtn" type="submit">Essayer</button>
+      </form>
+
+      <div class="meta" aria-live="polite">
+        <span id="attemptsText">5 essais restants</span>
+      </div>
+
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+      <div class="row">
+        <button class="btn secondary" id="restartBtn" type="button">Recommencer</button>
+      </div>
+    </main>
+  </div>
+
+
+<script src="./guessnumber.js" defer></script>
+</body>
+</html>
