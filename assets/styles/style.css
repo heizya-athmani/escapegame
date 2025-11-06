@@ -211,7 +211,6 @@ body {
 }
 
 @keyframes flicker {
-
   0%,
   19%,
   22%,
@@ -273,6 +272,11 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .input-zone {
+    padding-top: 1.5rem;
+  }
+}
 .site-footer {
   color: #7f7b73;
 }
