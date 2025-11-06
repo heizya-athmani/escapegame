@@ -55,9 +55,54 @@ let currentQuestion = 0;
 let score = 0;
 let answered = false;
 
+// Images de screamers (à remplacer par vos propres images)
+const screamerImages = [
+    "/assets/images/screamer1.gif",
+    "/assets/images/screamer2.gif",
+    "/assets/images/screamer3.webp"
+];
+
+// Son du screamer (un seul son)
+const screamerSound = '/assets/sound/jumpscaresound.mp3';
+
+function createScreamer() {
+    // Créer l'overlay du screamer
+    const screamer = document.createElement('div');
+    screamer.className = 'screamer';
+    
+    // Image aléatoire
+    const randomImage = screamerImages[Math.floor(Math.random() * screamerImages.length)];
+    
+     screamer.innerHTML = `
+        <div class="screamer-content">
+            <img src="${randomImage}" alt="Screamer" />
+        </div>
+    `
+    
+    try {
+        const audio = new Audio(screamerSound);
+        audio.volume = 0.7;
+        audio.play().catch(e => console.log('Audio:', e));
+    } catch (e) {
+        console.log('Audio non disponible');
+    };
+;
+    
+    document.body.appendChild(screamer);
+
+    // Jouer le son
+    
+
+    // Retirer le screamer après 2 secondes
+    setTimeout(() => {
+        screamer.classList.add('fade-out');
+        setTimeout(() => screamer.remove(), 500);
+    }, 500);
+}
+
 function startQuiz() {
-    document.getElementById('start-screen').classList.remove('active');
-    document.getElementById('quiz-screen').classList.add('active');
+    document.querySelector('#start-screen').classList.remove('active');
+    document.querySelector('#quiz-screen').classList.add('active');
     currentQuestion = 0;
     score = 0;
     showQuestion();
@@ -66,10 +111,10 @@ function startQuiz() {
 function showQuestion() {
     answered = false;
     const q = questions[currentQuestion];
-    document.getElementById('question-number').textContent = `Question ${currentQuestion + 1} / ${questions.length}`;
-    document.getElementById('question').textContent = q.question;
+    document.querySelector('#question-number').textContent = `Question ${currentQuestion + 1} / ${questions.length}`;
+    document.querySelector('#question').textContent = q.question;
 
-    const optionsContainer = document.getElementById('options');
+    const optionsContainer = document.querySelector('#options');
     optionsContainer.innerHTML = '';
 
     q.options.forEach((option, index) => {
@@ -80,7 +125,7 @@ function showQuestion() {
         optionsContainer.appendChild(optionDiv);
     });
 
-    document.getElementById('next-btn').classList.remove('show');
+    document.querySelector('#next-btn').classList.remove('show');
     updateProgress();
 }
 
@@ -102,9 +147,12 @@ function selectOption(selectedIndex) {
 
     if (selectedIndex === q.correct) {
         score++;
+    } else {
+        // SCREAMER pour mauvaise réponse !
+        createScreamer();
     }
 
-    document.getElementById('next-btn').classList.add('show');
+    document.querySelector('#next-btn').classList.add('show');
 }
 
 function nextQuestion() {
@@ -118,15 +166,15 @@ function nextQuestion() {
 
 function updateProgress() {
     const progress = ((currentQuestion + 1) / questions.length) * 100;
-    document.getElementById('progress-bar').style.width = progress + '%';
+    document.querySelector('#progress-bar').style.width = progress + '%';
 }
 
 function showResults() {
-    document.getElementById('quiz-screen').classList.remove('active');
-    document.getElementById('result-screen').classList.add('active');
+    document.querySelector('#quiz-screen').classList.remove('active');
+    document.querySelector('#result-screen').classList.add('active');
 
     const percentage = (score / questions.length) * 100;
-    document.getElementById('final-score').textContent = `${score} / ${questions.length}`;
+    document.querySelector('#final-score').textContent = `${score} / ${questions.length}`;
 
     let message = '';
     if (percentage === 100) {
@@ -136,13 +184,13 @@ function showResults() {
     } else if (percentage >= 50) {
         message = "👻 Pas mal ! Mais il y a encore des choses à découvrir...";
     } else {
-        message = "💀 Oh non... Vous devriez regarder plus de films d'horreur !";
+        message = "💀 Oh non... Vous êtes vraiment mauvais !";
     }
 
-    document.getElementById('result-message').textContent = message;
+    document.querySelector('#result-message').textContent = message;
 }
 
 function restartQuiz() {
-    document.getElementById('result-screen').classList.remove('active');
-    document.getElementById('start-screen').classList.add('active');
+    document.querySelector('#result-screen').classList.remove('active');
+    document.querySelector('#start-screen').classList.add('active');
 }
