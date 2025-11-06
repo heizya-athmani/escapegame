@@ -1,7 +1,7 @@
 :root {
   --bg: #0b0b0d;
   --fg: #e7e2d9;
-  --accent: #c02; 
+  --accent: #c02;
   --muted: #9b958c;
 }
 
@@ -30,7 +30,7 @@ body {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 20;
-  background: linear-gradient(180deg, rgba(0,0,0,.7), transparent);
+  background: linear-gradient(180deg, rgba(0, 0, 0, .7), transparent);
   backdrop-filter: blur(2px);
 }
 
@@ -38,8 +38,8 @@ body {
   display: flex;
   align-items: center;
   padding: 14px 0;
-  width: min(1100px, 92%); 
-  margin-inline: auto; 
+  width: min(1100px, 92%);
+  margin-inline: auto;
 }
 
 .site-logo {
@@ -72,13 +72,11 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 0, 0, 0.05),
-    rgba(255, 0, 0, 0.05) 1px,
-    transparent 2px,
-    transparent 4px
-  );
+  background: repeating-linear-gradient(to bottom,
+      rgba(255, 0, 0, 0.05),
+      rgba(255, 0, 0, 0.05) 1px,
+      transparent 2px,
+      transparent 4px);
   opacity: 0.2;
   pointer-events: none;
 }
@@ -107,7 +105,7 @@ body {
 }
 
 .ghost {
-  display: none; 
+  display: none;
 }
 
 .subtitle {
@@ -143,10 +141,12 @@ body {
   cursor: pointer;
   transition: all 0.15s ease;
 }
+
 .btn:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
 }
+
 .btn:active {
   transform: translateY(0);
 }
@@ -193,7 +193,7 @@ body {
 .difficulty-select {
   text-align: center;
   margin-bottom: .8rem;
-  color : var (--accent)
+  color: var (--accent)
 }
 
 .difficulty-select select {
@@ -201,7 +201,7 @@ body {
   color: var (-- fg);
   border: 1px solid var(--accent);
   padding: .2rem, 4rem;
-  border-radius:4px; 
+  border-radius: 4px;
 }
 
 /* Footer */
@@ -214,4 +214,81 @@ body {
   display: flex;
   position: relative;
   justify-content: center;
+}
+
+/* === SCREAMER SIMPLE === */
+.screamer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screamer.fade-out {
+  animation: screamerFadeOut 0.5s ease-out forwards;
+}
+
+@keyframes screamerFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.screamer-content {
+  animation: screamerShake 0.1s infinite;
+}
+
+@keyframes screamerShake {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-10px, -10px);
+  }
+
+  20% {
+    transform: translate(10px, 10px);
+  }
+
+  30% {
+    transform: translate(-10px, 10px);
+  }
+
+  40% {
+    transform: translate(10px, -10px);
+  }
+
+  50% {
+    transform: translate(-10px, 0);
+  }
+
+  60% {
+    transform: translate(10px, 0);
+  }
+
+  70% {
+    transform: translate(0, -10px);
+  }
+
+  80% {
+    transform: translate(0, 10px);
+  }
+
+  90% {
+    transform: translate(-10px, -10px);
+  }
+}
+
+.screamer-content img {
+  max-width: 90vw;
+  max-height: 80vh;
 }
