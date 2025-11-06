@@ -16,7 +16,7 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 20;
-  background: linear-gradient(180deg, rgba(0,0,0,.7), transparent);
+  background: linear-gradient(180deg, rgba(0, 0, 0, .7), transparent);
   backdrop-filter: blur(2px);
 }
 
@@ -24,8 +24,8 @@
   display: flex;
   align-items: center;
   padding: 14px 0;
-  width: min(1100px, 92%); 
-  margin-inline: auto; 
+  width: min(1100px, 92%);
+  margin-inline: auto;
 }
 
 .site-logo {
@@ -55,11 +55,11 @@ body {
 }
 
 main {
-  min-height: 100vh; 
+  min-height: 100vh;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  padding: 2rem; 
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 body::before {
@@ -398,4 +398,81 @@ h1 {
   50% {
     opacity: 0.6;
   }
+}
+
+/* === SCREAMER SIMPLE === */
+.screamer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screamer.fade-out {
+  animation: screamerFadeOut 0.5s ease-out forwards;
+}
+
+@keyframes screamerFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.screamer-content {
+  animation: screamerShake 0.1s infinite;
+}
+
+@keyframes screamerShake {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-10px, -10px);
+  }
+
+  20% {
+    transform: translate(10px, 10px);
+  }
+
+  30% {
+    transform: translate(-10px, 10px);
+  }
+
+  40% {
+    transform: translate(10px, -10px);
+  }
+
+  50% {
+    transform: translate(-10px, 0);
+  }
+
+  60% {
+    transform: translate(10px, 0);
+  }
+
+  70% {
+    transform: translate(0, -10px);
+  }
+
+  80% {
+    transform: translate(0, 10px);
+  }
+
+  90% {
+    transform: translate(-10px, -10px);
+  }
+}
+
+.screamer-content img {
+  max-width: 90vw;
+  max-height: 80vh;
 }

@@ -7,7 +7,7 @@ let timeLeft = 60;
 let timerInterval;
 let canFlip = false;
 let gameStarted = false;
-const maxMoves = 20;
+const maxMoves = 15;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -18,7 +18,7 @@ function shuffle(array) {
 }
 
 function createBoard() {
-    const gameBoard = document.getElementById('gameBoard');
+    const gameBoard = document.querySelector('#gameBoard');
     gameBoard.innerHTML = '';
     const shuffledCards = shuffle([...cards]);
 
@@ -28,9 +28,9 @@ function createBoard() {
         card.dataset.symbol = symbol;
         card.dataset.index = index;
         card.innerHTML = `
-                    <div class="card-face card-front"></div>
-                    <div class="card-face card-back">${symbol}</div>
-                `;
+            <div class="card-face card-front"></div>
+            <div class="card-face card-back">${symbol}</div>
+        `;
         card.addEventListener('click', flipCard);
         gameBoard.appendChild(card);
     });
@@ -53,7 +53,7 @@ function flipCard() {
 }
 
 function updateMoves() {
-    const movesEl = document.getElementById('moves');
+    const movesEl = document.querySelector('#moves');
     movesEl.textContent = `${moves}/${maxMoves}`;
 
     if (moves >= maxMoves - 3) {
@@ -75,7 +75,7 @@ function checkMatch() {
             card1.classList.add('matched');
             card2.classList.add('matched');
             matchedPairs++;
-            document.getElementById('matches').textContent = `${matchedPairs}/8`;
+            document.querySelector('#matches').textContent = `${matchedPairs}/8`;
             flippedCards = [];
             canFlip = true;
 
@@ -98,7 +98,7 @@ function startTimer() {
         timeLeft--;
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
-        const timerEl = document.getElementById('timer');
+        const timerEl = document.querySelector('#timer');
         timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
         if (timeLeft <= 15) {
@@ -116,9 +116,9 @@ function endGame(victory, reason) {
     gameStarted = false;
     canFlip = false;
 
-    const messageContent = document.getElementById('messageContent');
-    const messageTitle = document.getElementById('messageTitle');
-    const messageText = document.getElementById('messageText');
+    const messageContent = document.querySelector('#messageContent');
+    const messageTitle = document.querySelector('#messageTitle');
+    const messageText = document.querySelector('#messageText');
 
     if (victory) {
         messageContent.classList.add('victory');
@@ -128,14 +128,15 @@ function endGame(victory, reason) {
         messageContent.classList.remove('victory');
         messageTitle.textContent = 'Vous êtes fini';
         messageText.textContent = `${reason}. Vous avez ${matchedPairs} sur 8 paires.`;
+        createScreamer();
     }
 
-    document.getElementById('messageOverlay').classList.add('show');
+    document.querySelector('#messageOverlay').classList.add('show');
 }
 
 function startGame() {
-    document.getElementById('startOverlay').classList.add('hidden');
-    document.getElementById('gameBoard').classList.add('active');
+    document.querySelector('#startOverlay').classList.add('hidden');
+    document.querySelector('#gameBoard').classList.add('active');
     gameStarted = true;
     canFlip = true;
     startTimer();
@@ -151,18 +152,59 @@ function restartGame() {
     canFlip = false;
     gameStarted = false;
 
-    document.getElementById('moves').textContent = '0/20';
-    document.getElementById('moves').classList.remove('warning');
-    document.getElementById('matches').textContent = '0/8';
-    document.getElementById('timer').textContent = '1:00';
-    document.getElementById('timer').classList.remove('warning');
-    document.getElementById('messageOverlay').classList.remove('show');
-    document.getElementById('gameBoard').classList.remove('active');
-    document.getElementById('startOverlay').classList.remove('hidden');
+    document.querySelector('#moves').textContent = '0/15';
+    document.querySelector('#moves').classList.remove('warning');
+    document.querySelector('#matches').textContent = '0/8';
+    document.querySelector('#timer').textContent = '1:00';
+    document.querySelector('#timer').classList.remove('warning');
+    document.querySelector('#messageOverlay').classList.remove('show');
+    document.querySelector('#gameBoard').classList.remove('active');
+    document.querySelector('#startOverlay').classList.remove('hidden');
 
     createBoard();
 }
 
-document.getElementById('startBtn').addEventListener('click', startGame);
+document.querySelector('#startBtn').addEventListener('click', startGame);
 
 createBoard();
+
+// Images de screamers (à remplacer par vos propres images)
+const screamerImages = [
+    "/assets/images/screamer1.gif",
+    "/assets/images/screamer2.gif",
+    "/assets/images/screamer3.webp"
+];
+
+// Son du screamer (un seul son)
+const screamerSound = '/assets/sound/jumpscaresound.mp3';
+
+function createScreamer() {
+    // Créer l'overlay du screamer
+    const screamer = document.createElement('div');
+    screamer.className = 'screamer';
+
+    // Image aléatoire
+    const randomImage = screamerImages[Math.floor(Math.random() * screamerImages.length)];
+
+    screamer.innerHTML = `
+        <div class="screamer-content">
+            <img src="${randomImage}" alt="Screamer" />
+        </div>
+    `
+
+    try {
+        const audio = new Audio(screamerSound);
+        audio.volume = 0.7;
+        audio.play().catch(e => console.log('Audio:', e));
+    } catch (e) {
+        console.log('Audio non disponible');
+    }
+
+    document.body.appendChild(screamer);
+
+    // Retirer le screamer après 2 secondes
+    setTimeout(() => {
+        screamer.classList.add('fade-out');
+        setTimeout(() => screamer.remove(), 500);
+    }, 500);
+}
