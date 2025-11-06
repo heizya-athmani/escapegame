@@ -5,17 +5,36 @@
   const feedback = document.getElementById("feedback");
   const attemptsText = document.getElementById("attemptsText");
   const restartBtn = document.getElementById("restartBtn");
+  const subtitle = document.querySelector(".subtitle");
+  const select = document.getElementById("difficulty");
+
 
   const MIN = 1;
-  const MAX = 100;
-  const MAX_ATTEMPTS = 5;
+  let MAX = 100;
+  let MAX_ATTEMPTS = 5;
 
   let nombreMystere;
   let essaisRestants;
   let trouve;
 
+  function applyDifficulty(diff){
+    if (diff === "facile"){
+      MAX= 10;
+      MAX_ATTEMPTS= 5;
+  } else if (diff === "moyen"){
+     MAX= 50;
+      MAX_ATTEMPTS= 4;
+  }else if (diff === "difficile"){
+     MAX= 100;
+      MAX_ATTEMPTS= 3;
+  }
+  input.max = MAX;
+  subtitle.textContent = `(Entre ${MIN} et ${MAX})`;
+}
+
+
   function demarrer() {
-    nombreMystere = Math.floor(Math.random() * 100) + 1; 
+    nombreMystere = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN; 
     essaisRestants = MAX_ATTEMPTS;
     trouve = false;
 
@@ -37,7 +56,7 @@
     const valeur = Number(input.value);
 
     if (Number.isNaN(valeur) || valeur < MIN || valeur > MAX) {
-      feedback.textContent = "Entre un nombre valide entre 1 et 100.";
+      feedback.textContent = `Entre un nombre valide entre 1 et ${MAX}.`;
       return;
     }
 
@@ -68,10 +87,13 @@
 
   restartBtn.addEventListener("click", demarrer);
 
+  select.addEventListener("change", () => {
+        applyDifficulty(select.value);
+        demarrer();
+      });
+
+      applyDifficulty(select.value);
+      demarrer();
+  
   demarrer();
 })();
-
-
-
-
-
