@@ -190,6 +190,20 @@ body {
   pointer-events: none;
 }
 
+.difficulty-select {
+  text-align: center;
+  margin-bottom: .8rem;
+  color : var (--accent)
+}
+
+.difficulty-select select {
+  background: none;
+  color: var (-- fg);
+  border: 1px solid var(--accent);
+  padding: .2rem, 4rem;
+  border-radius:4px; 
+}
+
 /* Footer */
 .site-footer {
   color: #7f7b73;
