@@ -55,22 +55,20 @@ let currentQuestion = 0;
 let score = 0;
 let answered = false;
 
-// Images de screamers (à remplacer par vos propres images)
+
 const screamerImages = [
     "/assets/images/screamer1.gif",
     "/assets/images/screamer2.gif",
     "/assets/images/screamer3.webp"
 ];
 
-// Son du screamer (un seul son)
+
 const screamerSound = '/assets/sound/jumpscaresound.mp3';
 
 function createScreamer() {
-    // Créer l'overlay du screamer
     const screamer = document.createElement('div');
     screamer.className = 'screamer';
     
-    // Image aléatoire
     const randomImage = screamerImages[Math.floor(Math.random() * screamerImages.length)];
     
      screamer.innerHTML = `
@@ -90,10 +88,6 @@ function createScreamer() {
     
     document.body.appendChild(screamer);
 
-    // Jouer le son
-    
-
-    // Retirer le screamer après 2 secondes
     setTimeout(() => {
         screamer.classList.add('fade-out');
         setTimeout(() => screamer.remove(), 500);
@@ -148,7 +142,6 @@ function selectOption(selectedIndex) {
     if (selectedIndex === q.correct) {
         score++;
     } else {
-        // SCREAMER pour mauvaise réponse !
         createScreamer();
     }
 
