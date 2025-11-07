@@ -17,13 +17,14 @@
 
   <main>
   <section class="guess-app">
-    <div class="panel" role="main">
-      <h1 class="title" aria-label="Guess the Number">
-        <span>Guess the Number</span>
-        <span class="ghost" aria-hidden="true">Guess the Number</span>
+    <div class="panel">
+      <h1 class="title" aria-label="Guess Number">
+        <span>Guess Number</span>
+        <span class="ghost" aria-hidden="true">Guess Number</span>
       </h1>
+      
 <div class="difficulty-select">
-  <label for="difficulty">Choisis la difficulté :</label>
+  <label for="difficulty">Niveau :</label>
   <select id="difficulty">
     <option value="facile">Facile</option>
     <option value="moyen" selected>Moyen</option>
@@ -33,9 +34,9 @@
 
       <p class="subtitle">(Entre 1 et 100)</p>
 
-      <form class="form" id="guessForm" autocomplete="off" action="javascript:void(0)">
-        <input id="guessInput" class="input" name="guess" type="number" min="1" max="100" placeholder="Votre nombre…" inputmode="numeric" />
-        <button class="btn" id="tryBtn" type="submit">Essayer</button>
+      <form class="form" id="guessForm">
+        <input id="guessInput" class="input" name="guess" type="number" min="1" max="100" placeholder="??"/>
+        <button class="btn" id="tryBtn" type="submit">Valider</button>
       </form>
 
       <div class="meta" aria-live="polite">

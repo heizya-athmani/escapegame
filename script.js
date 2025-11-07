@@ -1,6 +1,6 @@
   const tw = document.querySelector('.tw');
   const text = tw ? tw.getAttribute('data-text') || '' : '';
-  let i = 0; /* tt ça c'est le trait gris qui clignote, donc on peut retirer aussi*/
+  let i = 0; 
 
   function typeNext() {
     if (!tw) return;

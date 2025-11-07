@@ -190,19 +190,54 @@ body {
   pointer-events: none;
 }
 
-.difficulty-select {
-  text-align: center;
-  margin-bottom: .8rem;
-  color : var (--accent)
+.bulle {
+  display: flex;
+  border: 1px solid #c02;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.bulle input, .bulle button {
+  border: none;
+  padding: 8px;
+  background: #111;
+  color: #e7e2d9;
+}
+.bulle button { background: #c02; cursor: pointer; }
+
+
+/* ============ STYLE DU SELECT ============ */
+#difficulty {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  height: 28px;
+  padding: 0 24px 0 8px;
+
+  
+  background: #111;
+  color: #e7e2d9;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+
+
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  vertical-align: middle;
+  transition: all 0.2s ease;
 }
 
-.difficulty-select select {
-  background: none;
-  color: var (-- fg);
-  border: 1px solid var(--accent);
-  padding: .2rem, 4rem;
-  border-radius:4px; 
+#difficulty:hover {
+  border-color: rgba(192,0,32,0.7);
+  box-shadow: 0 0 5px rgba(192,0,32,0.25);
 }
+#difficulty:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(192,0,32,0.3);
+}
+
 
 /* Footer */
 .site-footer {
