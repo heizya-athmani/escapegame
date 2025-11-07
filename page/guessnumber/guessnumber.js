@@ -100,13 +100,13 @@
 })();
 // Images de screamers (à remplacer par vos propres images)
 const screamerImages = [
-  "/assets/images/screamer1.gif",
-  "/assets/images/screamer2.gif",
-  "/assets/images/screamer3.webp"
+  "./assets/images/screamer1.gif",
+  "./assets/images/screamer2.gif",
+  "./assets/images/screamer3.webp"
 ];
 
 // Son du screamer (un seul son)
-const screamerSound = '/assets/sound/jumpscaresound.mp3';
+const screamerSound = './assets/sound/jumpscaresound.mp3';
 
 function createScreamer() {
   // Créer l'overlay du screamer
