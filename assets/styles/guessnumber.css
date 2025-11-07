@@ -190,20 +190,6 @@ body {
   pointer-events: none;
 }
 
-.bulle {
-  display: flex;
-  border: 1px solid #c02;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.bulle input, .bulle button {
-  border: none;
-  padding: 8px;
-  background: #111;
-  color: #e7e2d9;
-}
-.bulle button { background: #c02; cursor: pointer; }
-
 
 /* ============ STYLE DU SELECT ============ */
 #difficulty {
